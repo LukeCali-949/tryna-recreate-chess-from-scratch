@@ -2,12 +2,46 @@ import chessboardImage from "./assets/chessboardImage.svg";
 import whiteBishop from "./assets/whitebishop.svg";
 import thomasShelby from "./assets/thomasShelby.jpg";
 
+import { Pawn } from "./components";
+
 import { useState } from "react";
 
 function App() {
   const [chessboard, setChessboard] = useState<
-    [[], [], [], [], [], [], [], []]
-  >([[], [], [], [], [], [], [], []]);
+    [
+      [],
+      [
+        typeof Pawn,
+        typeof Pawn,
+        typeof Pawn,
+        typeof Pawn,
+        typeof Pawn,
+        typeof Pawn,
+        typeof Pawn,
+        typeof Pawn
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  >([
+    [],
+    [Pawn, Pawn, Pawn, Pawn, Pawn, Pawn, Pawn, Pawn],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+  ]);
+
+  const displayedChessBoard = chessboard.map((rows, rowIndex) => {
+    return <></>;
+  });
+
   return (
     <>
       <div className="w-[900px] h-[900px] mx-auto ">
